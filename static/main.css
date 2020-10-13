@@ -28,6 +28,11 @@ header {
 .content-pane {
   padding: 40px;
 }
+.content-pane-b {
+  padding: 40px;
+	display: flex;
+	flex-direction: row;
+}
 
 .fa-stack[data-count]:after{
   position: absolute;
@@ -52,4 +57,8 @@ header {
 
 .red-cart {
 	color: #DF0000;
+}
+.row_wrapper {
+	display: flex;
+	flex-direction: column;
 }
