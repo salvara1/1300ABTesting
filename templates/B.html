@@ -65,7 +65,7 @@
       <i>An online succulent store
         for your inner plant lady.
       </i>
-      <h2>Instructions: Checkout when you have over $150 in your cart.</h2>
+      <h2>Instructions: Add items to your cart, calculate total, checkout when total is over $150!</h2>
     </header>
 
     <!-- If you add any new buttons, you need to update the javascript file, for
@@ -115,15 +115,30 @@
         </div>
       </div>
       <div id="cart-wrapper">
+        <button name="button" onclick="calculateTotal()">Calculate Total Cost</button>
+        <h3>TOTAL: $<span id=TotalCostInCart>0</span> </h3>
         <a onclick='navigateToCheckout()'>
         <span id="cart" class="fa-stack fa-2x has-badge" data-count="0">
           <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
           <i class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
-        </span> CART
-      </a>
+        </span> GO TO CHECKOUT
+        </a>
+        <br>
+
+
       </div>
     </div>
+    <script>
 
+      function calculateTotal() {
+        var cart1 = parseInt(document.getElementById('mp1-added').textContent, 0);
+        var cart2 = parseInt(document.getElementById('mp2-added').textContent, 0);
+        var cart3 = parseInt(document.getElementById('mp3-added').textContent, 0);
+        var cart4 = parseInt(document.getElementById('mp4-added').textContent, 0);
+        var totaled = (cart1*9.99)+(cart2*14.99)+(cart3*25.99)+(cart4*34.99);
+        document.getElementById('TotalCostInCart').innerHTML = totaled;
+      }
+    </script>
     <!-- DO NOT EDIT below this line!! -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
