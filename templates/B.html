@@ -65,6 +65,7 @@
       <i>An online succulent store
         for your inner plant lady.
       </i>
+      <h2>Instructions: Checkout when you have over $150 in your cart!</h2>
     </header>
 
     <!-- If you add any new buttons, you need to update the javascript file, for
@@ -119,7 +120,9 @@
           <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
           <i class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
         </span> CART
-      </a>
+        </a>
+        <div>TOTAL COST: </div>
+        <div id="TotalCostInCart">0</div>
       </div>
     </div>
 
@@ -173,6 +176,7 @@
           countId = item + "-added";
           document.getElementById(countId).textContent = parseInt(document.getElementById(countId).textContent, 0) + num;
           incrementCartCount(val = num);
+          calculateTotal();
         }
 
         // Helper function for adding an item to the cart. Logically and visually increments the cart count.
@@ -184,6 +188,15 @@
 
         function int(str) {
             return parseInt(str, 0);
+        }
+
+        function calculateTotal() {
+          var cart1 = parseInt(document.getElementById('mp1-added').textContent, 0);
+          var cart2 = parseInt(document.getElementById('mp2-added').textContent, 0);
+          var cart3 = parseInt(document.getElementById('mp3-added').textContent, 0);
+          var cart4 = parseInt(document.getElementById('mp4-added').textContent, 0);
+          var totaled = (cart1*9.99)+(cart2*14.99)+(cart3*25.99)+(cart4*34.99);
+          document.getElementById('TotalCostInCart').textContent = toString(totaled);
         }
 
         function navigateToCheckout() {
